@@ -130,8 +130,6 @@ const Signup = () => {
               {errors.profile_pic && <Error message={errors.profile_pic} />}
             </div>
 
-
-
             {fetchError && <Error message={fetchError.message} />} {/* Display fetch error */}
           </CardContent>
           <CardFooter>
