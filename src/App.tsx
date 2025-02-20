@@ -5,6 +5,7 @@ import Dashboard from "./pages/dashboard"
 import LandingPage from "./pages/LandingPage"
 import Link from "./pages/link"
 import RedirectLink from "./pages/redirectLink"
+import UrlProvider from './context'
 
 
 const router = createBrowserRouter([
@@ -43,9 +44,11 @@ const router = createBrowserRouter([
 function App() {
   
   return (    
-    <div style={{ backgroundColor: "rgb(55, 65, 74)" }}>
+    <UrlProvider>
+        <div style={{ backgroundColor: "rgb(55, 65, 74)" }}>
           <RouterProvider router={router} />
-    </div>
+        </div>
+    </UrlProvider>
 
   )
 }
