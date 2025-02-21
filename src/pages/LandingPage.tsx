@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom"
 
 const LandingPage = () => {
 
-  const [longUrl, setLongUrl] = useState<string>()
+  const [longUrl, setLongUrl] = useState<string>('')
   const navigate = useNavigate()
 
   const handleShorten = (e: React.FormEvent<HTMLFormElement>) => {
@@ -16,6 +16,7 @@ const LandingPage = () => {
       navigate(`/auth?createNew=${longUrl}`);
     }
   };
+
 
 
   return (

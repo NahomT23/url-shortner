@@ -38,4 +38,6 @@ const useFetch = <T, U extends Options = {}>(cb: Callback<T, U>, options: U = {}
   
     return { data, loading, error, fn };
   };
+
+  
 export default useFetch;

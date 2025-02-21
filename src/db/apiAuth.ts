@@ -43,7 +43,7 @@ export async function getCurrentUser(){
   
     const { error: storageError } = await supabase.storage
       .from("profile_pic")
-      .upload(`profile_pic/${fileName}`, profile_pic as File); 
+      .upload(fileName, profile_pic as File); 
   
     if (storageError) throw new Error(storageError.message);
   
@@ -63,3 +63,11 @@ export async function getCurrentUser(){
     return data;
   }
   
+
+
+  export async function Logout(){
+    const { error } = await supabase.auth.signOut()
+
+    if (error) throw new Error(error.message);
+  
+  }

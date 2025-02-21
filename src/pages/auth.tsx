@@ -15,10 +15,11 @@ const Auth = () => {
   const { isAuthenticated, loading } = useUrlState()
 
   useEffect(() => {
-    if(!isAuthenticated && !loading){
+    if (isAuthenticated && !loading) {
       navigate(`/dashboard?${longLink ? `createNew=${longLink}` : ""}`);
-  }
-  }, []) 
+    }
+  }, [isAuthenticated, loading]);
+  
 
   return (
     <div className="mt-6 flex flex-col items-center gap-10 ">
